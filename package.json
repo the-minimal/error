@@ -1,0 +1,58 @@
+{
+  "name": "@the-minimal/error",
+  "type": "module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Miroslav Vršecký <yamiteru@icloud.com>",
+  "description": "Minimalist TypeScript error library with great focus on size and performance",
+  "source": "src/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*.js",
+    "dist/*.map",
+    "dist/*.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-minimal/error.git",
+    "directory": "src"
+  },
+  "keywords": [
+    "error",
+    "exception",
+    "panic",
+    "javascript",
+    "typescript"
+  ],
+  "homepage": "https://github.com/the-minimal/error",
+  "bugs": {
+    "url": "https://github.com/the-minimal/error/issues"
+  },
+  "scripts": {
+    "prepublishOnly": "bun run check && bun run build && bun run test",
+    "release": "release-it",
+    "build": "bun run build:clean && bun run build:code && bun run build:types && bun run build:stats",
+    "build:code": "bun run scripts/build.ts",
+    "build:types": "tsup",
+    "build:stats": "bun run scripts/stats.ts",
+    "build:clean": "rm -rf build",
+    "test": "bun test --coverage",
+    "check": "bunx @biomejs/biome check --apply ./"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.6.4",
+    "@types/bun": "latest",
+    "release-it": "17.2.0",
+    "tsup": "8.0.2"
+  },
+  "peerDependencies": {
+    "typescript": "5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@the-minimal/types": "0.0.1"
+  }
+}

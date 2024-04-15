@@ -1,0 +1,16 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+	"linter": {
+		"include": ["src/index.ts", "scripts/*.ts"],
+		"ignore": ["node_modules", "dist"],
+		"rules": {
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
+		}
+	},
+	"formatter": {
+		"include": ["src/index.ts", "scripts/*.ts"],
+		"ignore": ["node_modules", "dist"]
+	}
+}
