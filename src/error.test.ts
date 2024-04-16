@@ -1,5 +1,5 @@
-import { expect, it } from "bun:test";
-import { error, isError } from "index";
+import { expect, it } from "vitest";
+import { error, isError } from "./error";
 
 it("should throw error", () => {
 	expect(() => error("@the-minimal/error:error")).toThrow();
