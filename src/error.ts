@@ -16,4 +16,4 @@ export const error = (
   };
 };
 
-export const isError = (e: any): e is Error => ERROR in e;
+export const isError = (e: any): e is Error => e.hasOwnProperty(ERROR);

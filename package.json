@@ -38,7 +38,7 @@
     "build:types": "tsup",
     "build:stats": "bun run scripts/stats.ts",
     "build:clean": "rm -rf build",
-    "test:run": "vitest run",
+    "test": "vitest run",
     "test:watch": "vitest",
     "check": "bunx @biomejs/biome check --apply ./"
   },
