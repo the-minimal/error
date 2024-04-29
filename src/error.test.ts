@@ -1,14 +1,8 @@
 import { expect, it } from "vitest";
-import { error, isError } from "./error";
+import { error } from "./error";
+
+const AssertionError = error("Assertion");
 
 it("should throw error", () => {
-	expect(() => error("@the-minimal/error:error")).toThrow();
-});
-
-it("should return true if error is @the-minimal/error", () => {
-  try {
-    error("@the-minimal/error:error");
-  } catch (e) {
-    expect(isError(e)).toBe(true);
-  }
+	expect(() => AssertionError({}, "This is wrong!")).toThrow();
 });

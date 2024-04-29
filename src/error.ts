@@ -1,19 +1,9 @@
-import {ERROR} from "./constants";
-import {Context,Message, Reason, Value } from "./types";
-
 export const error = (
-  reason: Reason,
-  value: Value = null,
-  context: Context = null,
-  message: Message = null,
-) => {
+  name: string
+) => (cause: unknown, message = "") => {
   throw {
-    [ERROR]: 1,
-    reason,
-    value,
-    context,
+    name,
+    cause,
     message,
   };
 };
-
-export const isError = (e: any): e is Error => e.hasOwnProperty(ERROR);
