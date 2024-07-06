@@ -1,8 +1,14 @@
-![Error image](https://github.com/the-minimal/error/blob/main/docs/the-minimal-error.jpg?raw=true)
+## Example
 
-# @the-minimal/error
+```ts
+const AssertionError = error<string>("AssertionError");
 
-Minimalist TypeScript error library with great focus on size and performance.
+// ..
+
+if(typeof value !== "number") {
+  AssertionError("number", `Value ${value} should be of type number`);
+}
+```
 
 ## Install
 

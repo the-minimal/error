@@ -4,5 +4,5 @@ import { error } from "./error";
 const AssertionError = error("Assertion");
 
 it("should throw error", () => {
-	expect(() => AssertionError({}, "Missing or invalid token", 401)).toThrow();
+	expect(() => AssertionError(null, "Missing or invalid token", 401)).toThrow();
 });
